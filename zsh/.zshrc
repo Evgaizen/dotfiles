@@ -4,6 +4,8 @@ plugins=(
 	git
 	zsh-autosuggestions
 	zsh-syntax-highlighting
+  web-search
+  history
 )
 source $ZSH/oh-my-zsh.sh
 alias n="nvim"
