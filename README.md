@@ -11,3 +11,7 @@
 ### Neovim
 
 `ln -s ~/dotfiles/nvim ~/.config/nvim`
+
+### Alacritty
+
+`ln -s ~/dotfiles/alacritty ~/.config/alacritty`
