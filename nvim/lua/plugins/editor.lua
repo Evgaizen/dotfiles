@@ -30,5 +30,22 @@ return {
 		keys = {
 			{ "<leader>e", "<cmd>Neotree toggle=true<cr>", desc = "Toggle file explorer" }
 		}
+	},
+	{
+		"RRethy/vim-illuminate",
+		opts = {
+			delay = 200,
+			large_file_cutoff = 2000,
+			large_file_overrides = {
+				providers = { "lsp" }
+			}
+		},
+		config = function(_, opts)
+			require("illuminate").configure(opts)
+		end,
+		keys = {
+			{ "]]", "<cmd>lua require('illuminate').goto_next_reference()<cr>", desc = "Go to next reference" },
+			{ "[[", "<cmd>lua require('illuminate').goto_prev_reference()<cr>", desc = "Go to prev reference" },
+		}
 	}
 }
