@@ -15,7 +15,10 @@ end
 return {
 	{
 		"neovim/nvim-lspconfig",
-		dependecies = { "williamboman/mason.nvim" },
+		dependencies = { 
+			"williamboman/mason.nvim",
+			"hrsh7th/cmp-nvim-lsp"
+		},
 		ft = { 'lua' },
 		opts = {
 			servers = {
@@ -31,6 +34,7 @@ return {
 		},
 		config = function(_, opts)
 			local lspconfig = require('lspconfig')
+			local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 			for name, conf in pairs(opts.servers) do
 				lspconfig[name].setup {
@@ -43,7 +47,8 @@ return {
 							vim.notify('[on_attach] ' .. client.name .. ' attached to buffer ' .. bufnr, vim.log.levels.INFO)
 						end
 					end,
-					settings = conf.settings
+					settings = conf.settings,
+					capabilities = capabilities
 				}
 			end
 		end
