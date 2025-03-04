@@ -3,19 +3,27 @@
 ## Installation
 
 ### zsh
-
-`ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc`
-
-`source ~/.zshrc`
+```sh
+ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
+source ~/.zshrc
+```
 
 ### Neovim
-
-`ln -s ~/dotfiles/nvim ~/.config/nvim`
+```sh
+ln -s ~/dotfiles/nvim ~/.config/nvim
+```
 
 ### Alacritty
+```sh
+ln -s ~/dotfiles/alacritty ~/.config/alacritty
+```
 
-`ln -s ~/dotfiles/alacritty ~/.config/alacritty`
+#### Font installation
+```sh
+brew install homebrew/cask-fonts/font-jetbrains-mono-nerd-font
+```
 
 ### tmux
-
-`ln -s ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf`
+```sh
+ln -s ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
+```
