@@ -15,3 +15,7 @@
 ### Alacritty
 
 `ln -s ~/dotfiles/alacritty ~/.config/alacritty`
+
+### tmux
+
+`ln -s ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf`
