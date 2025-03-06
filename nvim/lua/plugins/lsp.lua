@@ -15,11 +15,10 @@ end
 return {
 	{
 		"neovim/nvim-lspconfig",
-		dependencies = { 
+		dependencies = {
 			"williamboman/mason.nvim",
 			"hrsh7th/cmp-nvim-lsp"
 		},
-		ft = { 'lua' },
 		opts = {
 			servers = {
 				lua_ls = {
@@ -28,6 +27,16 @@ return {
 							workspace = { checkThirdParty = false },
 							telemetry  = { enable = false }
 						}
+					}
+				},
+				ts_ls = {
+					filetypes = {
+						"javascript",
+						"javascriptreact",
+						"javascript.jsx",
+						"typescript",
+						"typescriptreact",
+						"typescript.tsx"
 					}
 				}
 			}
