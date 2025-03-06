@@ -20,7 +20,7 @@ ln -s ~/dotfiles/alacritty ~/.config/alacritty
 
 #### Font installation
 ```sh
-brew install homebrew/cask-fonts/font-jetbrains-mono-nerd-font
+brew install --cask font-jetbrains-mono-nerd-font
 ```
 
 ### tmux
