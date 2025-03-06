@@ -12,23 +12,15 @@ return {
 		}
 	},
 	{
-		"nvim-neo-tree/neo-tree.nvim",
-		tag = "3.30",
+		"nvim-tree/nvim-tree.lua",
 		dependencies = {
-			"nvim-lua/plenary.nvim",
 			"nvim-tree/nvim-web-devicons",
-			"MunifTanjim/nui.nvim",
-			{ "3rd/image.nvim", opts = {} }
 		},
-		cmd = "Neotree",
-		opts = {
-			window = {
-				position = "left",
-				width = 30
-			}
-		},
+		config = function ()
+			require('nvim-tree').setup{}
+		end,
 		keys = {
-			{ "<leader>e", "<cmd>Neotree toggle=true<cr>", desc = "Toggle file explorer" }
+			{ "<leader>nn", "<cmd>NvimTreeToggle<cr>", desc = "Toggle file explorer" }
 		}
 	},
 	{
