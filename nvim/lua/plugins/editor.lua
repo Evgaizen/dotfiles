@@ -8,20 +8,20 @@ return {
 			{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
 			{ "<leader>fw", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
 			{ "<leader>fs", "<cmd>Telescope grep_string<cr>", desc = "Find string under cursor" },
-			{ "<leader>fl", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Grep in current buffer" }
-		}
+			{ "<leader>fl", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Grep in current buffer" },
+		},
 	},
 	{
 		"nvim-tree/nvim-tree.lua",
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
-		config = function ()
-			require('nvim-tree').setup{}
+		config = function()
+			require("nvim-tree").setup({})
 		end,
 		keys = {
-			{ "<leader>nn", "<cmd>NvimTreeToggle<cr>", desc = "Toggle file explorer" }
-		}
+			{ "<leader>nn", "<cmd>NvimTreeToggle<cr>", desc = "Toggle file explorer" },
+		},
 	},
 	{
 		"RRethy/vim-illuminate",
@@ -29,8 +29,8 @@ return {
 			delay = 200,
 			large_file_cutoff = 2000,
 			large_file_overrides = {
-				providers = { "lsp" }
-			}
+				providers = { "lsp" },
+			},
 		},
 		config = function(_, opts)
 			require("illuminate").configure(opts)
@@ -38,6 +38,6 @@ return {
 		keys = {
 			{ "]]", "<cmd>lua require('illuminate').goto_next_reference()<cr>", desc = "Go to next reference" },
 			{ "[[", "<cmd>lua require('illuminate').goto_prev_reference()<cr>", desc = "Go to prev reference" },
-		}
-	}
+		},
+	},
 }

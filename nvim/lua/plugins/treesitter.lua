@@ -16,8 +16,8 @@ return {
 				"markdown",
 				"tsx",
 				"typescript",
-				"yaml"
-			}
-		}
-	}
+				"yaml",
+			},
+		},
+	},
 }

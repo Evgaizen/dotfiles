@@ -1,15 +1,15 @@
 local on_attach = function(client, bufnr)
-	  local keymap = function(mode, keys, func, opts)
-        opts.buffer = bufnr
-        vim.keymap.set(mode, keys, func, opts)
-    end
+	local keymap = function(mode, keys, func, opts)
+		opts.buffer = bufnr
+		vim.keymap.set(mode, keys, func, opts)
+	end
 
-    keymap('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
-    keymap('n', 'gD', vim.lsp.buf.declaration, { desc = 'Go to declaration' })
-    keymap('n', 'gI', vim.lsp.buf.implementation, { desc = 'Go to implementation' })
-    keymap('n', 'gy', vim.lsp.buf.type_definition, { desc = 'Go to type definition' })
-    keymap('n', 'gr', vim.lsp.buf.references, { desc = 'List references' })
-		keymap('n', 'K', vim.lsp.buf.hover, { desc = 'Show documentation' })
+	keymap("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+	keymap("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
+	keymap("n", "gI", vim.lsp.buf.implementation, { desc = "Go to implementation" })
+	keymap("n", "gy", vim.lsp.buf.type_definition, { desc = "Go to type definition" })
+	keymap("n", "gr", vim.lsp.buf.references, { desc = "List references" })
+	keymap("n", "K", vim.lsp.buf.hover, { desc = "Show documentation" })
 end
 
 return {
@@ -17,7 +17,7 @@ return {
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			"williamboman/mason.nvim",
-			"hrsh7th/cmp-nvim-lsp"
+			"hrsh7th/cmp-nvim-lsp",
 		},
 		opts = {
 			servers = {
@@ -25,9 +25,9 @@ return {
 					settings = {
 						Lua = {
 							workspace = { checkThirdParty = false },
-							telemetry  = { enable = false }
-						}
-					}
+							telemetry = { enable = false },
+						},
+					},
 				},
 				ts_ls = {
 					filetypes = {
@@ -36,35 +36,38 @@ return {
 						"javascript.jsx",
 						"typescript",
 						"typescriptreact",
-						"typescript.tsx"
-					}
-				}
-			}
+						"typescript.tsx",
+					},
+				},
+			},
 		},
 		config = function(_, opts)
-			local lspconfig = require('lspconfig')
-			local capabilities = require('cmp_nvim_lsp').default_capabilities()
+			local lspconfig = require("lspconfig")
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			for name, conf in pairs(opts.servers) do
-				lspconfig[name].setup {
+				lspconfig[name].setup({
 					on_attach = function(client, bufnr)
 						local _, err = pcall(on_attach, client, bufnr)
 
 						if err then
-							vim.notify('[on_attach] error' .. err, vim.log.levels.ERROR)
+							vim.notify("[on_attach] error" .. err, vim.log.levels.ERROR)
 						else
-							vim.notify('[on_attach] ' .. client.name .. ' attached to buffer ' .. bufnr, vim.log.levels.INFO)
+							vim.notify(
+								"[on_attach] " .. client.name .. " attached to buffer " .. bufnr,
+								vim.log.levels.INFO
+							)
 						end
 					end,
 					settings = conf.settings,
-					capabilities = capabilities
-				}
+					capabilities = capabilities,
+				})
 			end
-		end
+		end,
 	},
 	{
 		"williamboman/mason.nvim",
 		cmd = "Mason",
-		config = true
-	}
+		config = true,
+	},
 }

@@ -21,7 +21,7 @@ require("config.keymaps")
 
 require("lazy").setup({
 	spec = {
-		{ import = "plugins" }
+		{ import = "plugins" },
 	},
 	intall = { colorscheme = { "habamax" } },
 	checker = { enabled = true },
