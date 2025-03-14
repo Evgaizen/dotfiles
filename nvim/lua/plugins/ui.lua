@@ -10,12 +10,4 @@ return {
 		event = "VeryLazy",
 		opts = {},
 	},
-	{
-		"akinsho/toggleterm.nvim",
-		config = true,
-		cmd = "ToggleTerm",
-		keys = {
-			{ "<leader>tt", "<cmd>ToggleTerm direction=float<cr>", desc = "Toggle Terminal" },
-		},
-	},
 }
