@@ -9,6 +9,8 @@ return {
 			{ "<leader>fw", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
 			{ "<leader>fs", "<cmd>Telescope grep_string<cr>", desc = "Find string under cursor" },
 			{ "<leader>fl", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Grep in current buffer" },
+			{ "gr", "<cmd>Telescope lsp_references theme=cursor initial_mode=normal<cr>", desc = "List references" },
+			{ "gd", "<cmd>Telescope lsp_definitions theme=cursor<cr>", desc = "Go to definition" },
 		},
 	},
 	{

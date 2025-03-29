@@ -7,8 +7,6 @@ local on_attach = function(client, bufnr)
 	keymap("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 	keymap("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
 	keymap("n", "gI", vim.lsp.buf.implementation, { desc = "Go to implementation" })
-	keymap("n", "gy", vim.lsp.buf.type_definition, { desc = "Go to type definition" })
-	keymap("n", "gr", vim.lsp.buf.references, { desc = "List references" })
 	keymap("n", "K", vim.lsp.buf.hover, { desc = "Show documentation" })
 end
 
