@@ -8,6 +8,7 @@ local on_attach = function(client, bufnr)
 	keymap("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
 	keymap("n", "gI", vim.lsp.buf.implementation, { desc = "Go to implementation" })
 	keymap("n", "K", vim.lsp.buf.hover, { desc = "Show documentation" })
+	keymap("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
 end
 
 return {
